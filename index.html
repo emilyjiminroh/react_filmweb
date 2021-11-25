@@ -13,7 +13,8 @@
       //setcounter 자동적으로 리렌더링을 수행해준다.
       const [counter, setCounter] = React.useState(0);
       const onClick = () => {
-        setCounter(counter + 1); //counter+1 후 render 자동 수행
+        //setCounter(counter + 1); //counter+1 후 render 자동 수행
+        setCounter((current) => current + 1);
       };
       return (
         <div>
