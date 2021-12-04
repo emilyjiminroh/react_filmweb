@@ -7,23 +7,29 @@
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    const root = document.getElementById("root");
-
     function App() {
-      //setcounter 자동적으로  리렌더링을 수행해준다.
-      const [counter, setCounter] = React.useState(0);
-
-      const onClick = () => {
-        //setCounter(counter + 1); //counter+1 후 render 자동 수행
-        setCounter((current) => current + 1); // 위 쪽 코드 보다 훨신 안전하다
+      const [minutes, setMinutes] = React.useState();
+      const onChange = (event) => {
+        setMinutes(event.target.value);
       };
       return (
         <div>
-          <h3>Total clicks: {counter}</h3>
-          <button onClick={onClick}>Click me</button>
+          <h1>Super Converter</h1>
+          <label htmlfor="minutes">Minutes</label>
+          <input
+            value={minutes}
+            id="minutes"
+            placeholder="Minutes"
+            type="number"
+            onChange={onChange}
+          />
+          <h4>You want to convert {minutes}</h4>
+          <label htmlfor="hours">Hours</label>
+          <input placeholder="Hours" type="number" />
         </div>
       );
     }
+    const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
   </script>
 </html>
