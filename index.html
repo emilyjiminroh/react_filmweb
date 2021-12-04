@@ -10,8 +10,9 @@
     const root = document.getElementById("root");
 
     function App() {
-      //setcounter 자동적으로 리렌더링을 수행해준다.
+      //setcounter 자동적으로  리렌더링을 수행해준다.
       const [counter, setCounter] = React.useState(0);
+
       const onClick = () => {
         //setCounter(counter + 1); //counter+1 후 render 자동 수행
         setCounter((current) => current + 1); // 위 쪽 코드 보다 훨신 안전하다
